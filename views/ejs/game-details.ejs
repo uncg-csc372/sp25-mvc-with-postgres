@@ -1,0 +1,33 @@
+<%- include('./partials/head') %>
+  <script src="/game-details.js" defer></script>
+  </head>
+
+  <body>
+    <%- include('./partials/nav') %>
+      <h1> Game #<%=game.id %>
+      </h1>
+      <div id="root">
+        <div class="card-holder">
+          <h3>
+            <%= game.name %>
+          </h3>
+          <p>Platform:<a href="/games?attribute=platform&value=<%= game.platform %>">
+              <%=game.platform %>
+            </a></p>
+          <p>Genre: <%=game.genre %>
+          </p>
+          <p>Publisher: <a href="/games?attribute=publisher&value=<%= game.publisher %>">
+            <%=game.publisher %>
+          </a>
+          </p>
+          <p>Developer: <%=game.developer %>
+          </p>
+          <p>Rating: <%=game.rating %>
+          </p>
+          <button id="<%= game.id %>">Delete Game</button>
+        </div>
+        <h2><a href="/games/all">Games List</a></h2>
+      </div>
+  </body>
+
+  </html>
